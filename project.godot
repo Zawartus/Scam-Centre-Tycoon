@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Bron_sie_w_necie"
+config/name="Scam-Centre-Tycoon"
 run/main_scene="uid://baxaisjl4q8dn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
