@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://baxaisjl4q8dn"]
 
 [ext_resource type="Texture2D" uid="uid://kcusbw03r4g4" path="res://Map/Tiles_kenny.png" id="1_mmrhf"]
-[ext_resource type="Script" uid="uid://cq23yajg3ov3q" path="res://Sceny/money.gd" id="1_swnid"]
 [ext_resource type="Script" uid="uid://c1xlf7pbttk1f" path="res://Sceny/label.gd" id="3_vyy3y"]
+
+[sub_resource type="GDScript" id="GDScript_c1fdf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1fdf"]
 texture = ExtResource("1_mmrhf")
@@ -236,7 +237,7 @@ tile_proxies/coords_level = [[20, Vector2i(0, 0)], [164, Vector2i(0, 0)], [21, V
 font_size = 128
 
 [node name="Test" type="Node2D" unique_id=352370236]
-script = ExtResource("1_swnid")
+script = SubResource("GDScript_c1fdf")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=543803908]
 y_sort_enabled = true
