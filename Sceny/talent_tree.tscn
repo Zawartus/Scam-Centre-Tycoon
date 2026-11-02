@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dcebfppomtoft"]
+
+[ext_resource type="Script" uid="uid://ddkji4ryslih" path="res://Scripts/talent_tree.gd" id="1_smnl5"]
+[ext_resource type="PackedScene" uid="uid://b72anhk05k1fs" path="res://Sceny/research_tree.tscn" id="2_0sm3d"]
+
+[node name="TalentTree" type="Control" unique_id=1705527591]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_smnl5")
+
+[node name="pointsLabel" type="Label" parent="." unique_id=1111984294]
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 552.0
+offset_right = 1209.0
+offset_bottom = 689.0
+theme_override_font_sizes/font_size = 100
+text = "0"
+horizontal_alignment = 2
+
+[node name="Skill1" parent="." unique_id=42199307 instance=ExtResource("2_0sm3d")]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 552.0
+offset_right = 248.0
+offset_bottom = 672.0
+ignore_texture_size = true
+stretch_mode = 0
+talent_id = "Skill1"
+max_level = 5
+
+[node name="Skill5" parent="." unique_id=428470802 instance=ExtResource("2_0sm3d")]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 520.0
+offset_right = 512.0
+offset_bottom = 648.0
+talent_id = "Skill5"
+max_level = 5
+
+[node name="Skill6" parent="." unique_id=552833033 node_paths=PackedStringArray("depend_on") instance=ExtResource("2_0sm3d")]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 352.0
+offset_right = 512.0
+offset_bottom = 480.0
+talent_id = "Skill6"
+tier = 2
+max_level = 2
+depend_on = [NodePath("../Skill5")]
+
+[node name="Skill7" parent="." unique_id=1232321489 node_paths=PackedStringArray("depend_on") instance=ExtResource("2_0sm3d")]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 192.0
+offset_right = 512.0
+offset_bottom = 320.0
+talent_id = "Skill7"
+tier = 3
+depend_on = [NodePath("../Skill6")]
+
+[node name="Skill2" parent="." unique_id=1285769559 node_paths=PackedStringArray("depend_on") instance=ExtResource("2_0sm3d")]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 376.0
+offset_right = 256.0
+offset_bottom = 504.0
+talent_id = "Skill2"
+tier = 2
+max_level = 3
+depend_on = [NodePath("../Skill1")]
+
+[node name="Skill3" parent="." unique_id=2147062471 node_paths=PackedStringArray("depend_on") instance=ExtResource("2_0sm3d")]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 256.0
+offset_bottom = 320.0
+talent_id = "Skill3"
+tier = 3
+depend_on = [NodePath("../Skill2")]
+
+[node name="Skill4" parent="." unique_id=352158745 node_paths=PackedStringArray("depend_on") instance=ExtResource("2_0sm3d")]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 144.0
+talent_id = "Skill4"
+tier = 4
+depend_on = [NodePath("../Skill3"), NodePath("../Skill7")]
