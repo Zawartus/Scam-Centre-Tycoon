@@ -1,18 +1,75 @@
 [gd_scene format=4 uid="uid://baxaisjl4q8dn"]
 
-[ext_resource type="TileSet" uid="uid://l0hhw0ku6iqi" path="res://Kenny_tileset.tres" id="1_mmrhf"]
+[ext_resource type="Script" uid="uid://nmj0s3p5yn0m" path="res://Sceny/test.gd" id="1_dy2lw"]
 [ext_resource type="PackedScene" uid="uid://i6w84gp6gffw" path="res://Sceny/camera.tscn" id="2_c1fdf"]
+[ext_resource type="Texture2D" uid="uid://uqs3fboebvy" path="res://Assety/floorbase.png" id="2_jtbub"]
+[ext_resource type="Texture2D" uid="uid://dqvrubfdej0wu" path="res://Assety/wall.png" id="3_dy2lw"]
+[ext_resource type="PackedScene" uid="uid://bo1cpe7ekrm1q" path="res://Grid/Grid.tscn" id="3_swnid"]
+[ext_resource type="Texture2D" uid="uid://ds5y4djp3cxgg" path="res://Assety/wall_scaled.png" id="4_mwjvl"]
+[ext_resource type="Texture2D" uid="uid://clprayhu225mf" path="res://Assety/wall_scaled2.png" id="5_mwjvl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcnti"]
+texture = ExtResource("2_jtbub")
+texture_region_size = Vector2i(409, 205)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yp2da"]
+tile_shape = 1
+tile_size = Vector2i(409, 205)
+sources/0 = SubResource("TileSetAtlasSource_vcnti")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qijql"]
+texture = ExtResource("3_dy2lw")
+texture_region_size = Vector2i(209, 157)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 10)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckdtg"]
+texture = ExtResource("4_mwjvl")
+texture_region_size = Vector2i(266, 128)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ly156"]
+texture = ExtResource("5_mwjvl")
+texture_region_size = Vector2i(409, 205)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ch1j7"]
+tile_shape = 1
+tile_size = Vector2i(409, 205)
+sources/2 = SubResource("TileSetAtlasSource_qijql")
+sources/4 = SubResource("TileSetAtlasSource_ckdtg")
+sources/5 = SubResource("TileSetAtlasSource_ly156")
 
 [node name="Test" type="Node2D" unique_id=352370236]
+script = ExtResource("1_dy2lw")
 
 [node name="Ground_layer" type="TileMapLayer" parent="." unique_id=543803908]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD/////pAAJAAEAAAAAAP7/pAAIAAEAAAAAAAAApAAKAAEAAAAAAP//pAAKAAEAAAAAAP3/pAAIAAEAAAABAP7/pAAAAAQAAAABAP//pAAIAAEAAAABAAAApAAJAAEAAAAAAAEApAAIAAEAAAACAAAApAAIAAEAAAACAP//pAAKAAEAAAADAAAApAAIAAEAAAACAAEApAAIAAEAAAABAAEApAAJAAEAAAD//wAApAAKAAEAAAD//wEApAAKAAEAAAAAAAIApAAKAAEAAAAAAAMApAAKAAEAAAABAAIApAAJAAEAAAACAAIApAAIAAEAAAABAAMApAAIAAEAAAABAAQApAADAAQAAAACAP7/pAAIAAEAAAABAP3/pAAIAAEAAAABAPz/pAAIAAEAAAAAAAUApAAKAAEAAAAAAAQApAAKAAEAAAD//wUApAAIAAEAAAD//wMApAAIAAEAAAD//wIApAACAAQAAAD+/wEApAAIAAEAAAD+/wAApAAIAAEAAAD+/wIApAAIAAEAAAD+/wMApAAIAAEAAAD//wQApAAIAAEAAAAAAAYApAAIAAEAAAD9/wEApAAIAAEAAAD+////pAAGAAYAAAD///7/pAAIAAEAAAD///3/pAAKAAEAAAD///z/pAAIAAEAAAAAAPz/pAACAAQAAAAAAPv/pAAIAAEAAAABAPr/pAAIAAEAAAABAPv/pAAIAAEAAAACAPz/pAAIAAEAAAACAP3/pAAIAAEAAAADAP7/pAAIAAEAAAADAP//pAAIAAEAAAAAAPn/pAAIAAEAAAAAAPr/pAAKAAEAAAD///v/pAAIAAEAAAD9////pAAIAAEAAAD9/wAApAAAAAQAAAD+//7/pAAIAAEAAAD+//3/pAAIAAEAAAAAAAcApAAIAAEAAAABAAYApAAIAAEAAAABAAUApAAIAAEAAAACAAQApAAIAAEAAAACAAMApAAIAAEAAAADAAIApAAIAAEAAAADAAEApAAIAAEAAAAEAAAApAAIAAEAAAD8/wEApAAKAAUAAAD9/wIApAAGAAUAAAD9/wMApAAGAAUAAAD+/wQApAAGAAUAAAD+/wUApAAKAAUAAAD//wYApAAGAAUAAAD//wcApAAGAAUAAAAAAAgApAAGAAUAAAABAAgApAAEAAUAAAABAAcApAAEAAUAAAACAAYApAAEAAUAAAACAAUApAAEAAUAAAADAAQApAAEAAUAAAADAAMApAAEAAUAAAAEAAIApAAEAAUAAAAEAAEApAAEAAUAAAD8////pAADAAUAAAD9//7/pAADAAUAAAD9//3/pAADAAUAAAD+//z/pAALAAQAAAD+//v/pAALAAQAAAD///r/pAADAAUAAAD///n/pAADAAUAAAAAAPj/pAADAAUAAAABAPj/pAABAAUAAAABAPn/pAABAAUAAAACAPr/pAABAAUAAAACAPv/pAABAAUAAAADAPz/pAABAAUAAAADAP3/pAABAAUAAAAEAP7/pAABAAUAAAAEAP//pAAJAAQAAAAAAPf/pAAHAAQAAAAFAAAApAAFAAQAAAD8/wAApAAGAAQAAAAAAAkApAAEAAQAAAA=")
-tile_set = ExtResource("1_mmrhf")
+tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD+//7/AAAAAAAAAAD+//3/AAAAAAAAAAD///7/AAAAAAAAAAD///z/AAAAAAAAAAD///3/AAAAAAAAAAD+/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAD+/wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAABAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_yp2da")
 
 [node name="Wall_layer" type="TileMapLayer" parent="." unique_id=293517676]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD9/wAA4QAAAAAAAAABAPn/4QABAAkAAAACAPr/4QABAAkAAAACAPv/4QABAAkAAAABAPj/4QABAAkAAAAAAPn/4QAAAAkAAAAAAPr/4QAAAAkAAAD///v/4QAAAAkAAAD9////4QAAAAkAAAD+//7/4QAAAAkAAAD+//3/4QAAAAkAAAD///z/4QAAAAUAAAADAPz/4QABAAAAAAAEAAIA4QAIAAAAAAADAAMA4QAAAAcAAAAEAAEA4QAIAAAAAAAEAP//4QAJAAAAAAAEAP7/4QAJAAAAAAADAAQA4QAIAAcAAAACAAUA4QAIAAcAAAA=")
-tile_set = ExtResource("1_mmrhf")
+tile_set = SubResource("TileSet_ch1j7")
 
 [node name="Camera" parent="." unique_id=1691480734 instance=ExtResource("2_c1fdf")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1670258162]
+
+[node name="Grid_Node_2D" type="Node2D" parent="." unique_id=1887677334]
+rotation = 0.46425757
+skew = 0.6440265
+
+[node name="Grid" parent="Grid_Node_2D" unique_id=1593921481 instance=ExtResource("3_swnid")]
+offset_left = -493.83115
+offset_top = -313.4992
+offset_right = 478.16885
+offset_bottom = 767.5008
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 9
+columns = 9
+width = 9
+height = 10
+borderSize = 9
+
+[connection signal="gui_input" from="Grid_Node_2D/Grid" to="." method="_on_grid_gui_input"]
