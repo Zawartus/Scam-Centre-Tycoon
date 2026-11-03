@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://dnrhquilka871"]
 
-[ext_resource type="Texture2D" uid="uid://dr4h2e3ugto0k" path="res://Assety/table.png" id="1_ch1j7"]
+[ext_resource type="Texture2D" uid="uid://dr4h2e3ugto0k" path="res://Assety/Wall/table.png" id="1_ch1j7"]
 [ext_resource type="Script" uid="uid://ceslymbrgviwq" path="res://object.gd" id="1_l2ofb"]
 
 [node name="Object" type="Sprite2D" unique_id=1870011715]
-visible = false
 modulate = Color(1, 1, 1, 0.34117648)
 scale = Vector2(2, 2)
 texture = ExtResource("1_ch1j7")
