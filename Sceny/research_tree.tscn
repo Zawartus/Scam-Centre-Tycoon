@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b72anhk05k1fs"]
+
+[ext_resource type="Texture2D" uid="uid://bdxnmd50lgchc" path="res://icon.svg" id="1_hhg2b"]
+[ext_resource type="Script" uid="uid://c7ctqr1p8c1b1" path="res://Scripts/talent_line.gd" id="2_5u71i"]
+[ext_resource type="Script" uid="uid://d2i00booy1r3g" path="res://Scripts/research_tree.gd" id="2_ti37r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhg2b"]
+bg_color = Color(0.6, 0.6, 0.5882353, 0.6666667)
+
+[node name="ResearchTree" type="TextureButton" unique_id=42199307]
+z_index = 1
+offset_right = 128.0
+offset_bottom = 128.0
+texture_normal = ExtResource("1_hhg2b")
+script = ExtResource("2_ti37r")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=73222250]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=20108758]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
+text = "0/3"
+horizontal_alignment = 2
+
+[node name="DisabledPanel" type="Panel" parent="." unique_id=1836812604]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_hhg2b")
+
+[node name="talentLine" type="Line2D" parent="." unique_id=220625397]
+top_level = true
+width = 2.0
+default_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+script = ExtResource("2_5u71i")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
