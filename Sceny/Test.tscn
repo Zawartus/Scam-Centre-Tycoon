@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://nmj0s3p5yn0m" path="res://Sceny/test.gd" id="1_dy2lw"]
 [ext_resource type="PackedScene" uid="uid://i6w84gp6gffw" path="res://Sceny/camera.tscn" id="2_c1fdf"]
 [ext_resource type="Texture2D" uid="uid://uqs3fboebvy" path="res://Assety/Wall/floorbase.png" id="2_jtbub"]
-[ext_resource type="Texture2D" uid="uid://dstmx13to66ar" path="res://Assety/Wall/wall_3.png" id="3_jtbub"]
+[ext_resource type="Texture2D" uid="uid://dqvrubfdej0wu" path="res://Assety/Wall/wall.png" id="3_dy2lw"]
 [ext_resource type="PackedScene" uid="uid://bo1cpe7ekrm1q" path="res://Grid/Grid.tscn" id="3_swnid"]
-[ext_resource type="Texture2D" uid="uid://cwqsl8r51vt5q" path="res://Assety/Wall/wall_3_H.png" id="4_mwjvl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcnti"]
 texture = ExtResource("2_jtbub")
@@ -17,33 +16,30 @@ tile_shape = 1
 tile_size = Vector2i(409, 205)
 sources/0 = SubResource("TileSetAtlasSource_vcnti")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qijql"]
-texture = ExtResource("3_jtbub")
-texture_region_size = Vector2i(204, 102)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtbub"]
+texture = ExtResource("3_dy2lw")
+texture_region_size = Vector2i(209, 157)
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 20)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckdtg"]
-texture = ExtResource("4_mwjvl")
-texture_region_size = Vector2i(204, 102)
-0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-105, -27)
+0:0/0/z_index = 1
 
 [sub_resource type="TileSet" id="TileSet_ch1j7"]
 tile_shape = 1
-tile_size = Vector2i(204, 102)
-sources/1 = SubResource("TileSetAtlasSource_qijql")
-sources/2 = SubResource("TileSetAtlasSource_ckdtg")
+tile_size = Vector2i(409, 205)
+sources/0 = SubResource("TileSetAtlasSource_jtbub")
 
 [node name="Test" type="Node2D" unique_id=352370236]
 script = ExtResource("1_dy2lw")
 
 [node name="Ground_layer" type="TileMapLayer" parent="." unique_id=543803908]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD+//7/AAAAAAAAAAD+//3/AAAAAAAAAAD///7/AAAAAAAAAAD///z/AAAAAAAAAAD///3/AAAAAAAAAAD+/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAD+/wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAABAAAAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD+//7/AAAAAAAAAAD+/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_yp2da")
 
 [node name="Wall_layer" type="TileMapLayer" parent="." unique_id=293517676]
 y_sort_enabled = true
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD8////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ch1j7")
 
 [node name="Camera" parent="." unique_id=1691480734 instance=ExtResource("2_c1fdf")]
@@ -55,15 +51,14 @@ rotation = 0.46425757
 skew = 0.6440265
 
 [node name="Grid" parent="Grid_Node_2D" unique_id=1593921481 instance=ExtResource("3_swnid")]
-offset_left = -493.83115
-offset_top = -313.4992
-offset_right = 478.16885
-offset_bottom = 767.5008
-theme_override_constants/h_separation = 9
-theme_override_constants/v_separation = 9
-columns = 9
-width = 9
-height = 10
-borderSize = 9
+offset_left = -527.84094
+offset_top = 133.0028
+offset_right = 444.15906
+offset_bottom = 1214.0028
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 5
+height = 6
+borderSize = 8
 
 [connection signal="gui_input" from="Grid_Node_2D/Grid" to="." method="_on_grid_gui_input"]
