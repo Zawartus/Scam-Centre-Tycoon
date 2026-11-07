@@ -33,13 +33,13 @@ script = ExtResource("1_dy2lw")
 
 [node name="Ground_layer" type="TileMapLayer" parent="." unique_id=543803908]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD+//7/AAAAAAAAAAD+/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wAAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_yp2da")
 
 [node name="Wall_layer" type="TileMapLayer" parent="." unique_id=293517676]
 y_sort_enabled = true
 texture_filter = 1
-tile_map_data = PackedByteArray("AAD8////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+//7/AAAAAAAAAAD+//3/AAAAAAAAAAD///z/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ch1j7")
 
 [node name="Camera" parent="." unique_id=1691480734 instance=ExtResource("2_c1fdf")]
@@ -47,18 +47,23 @@ tile_set = SubResource("TileSet_ch1j7")
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1670258162]
 
 [node name="Grid_Node_2D" type="Node2D" parent="." unique_id=1887677334]
+visible = false
+position = Vector2(-6, -8.999999)
 rotation = 0.46425757
 skew = 0.6440265
 
 [node name="Grid" parent="Grid_Node_2D" unique_id=1593921481 instance=ExtResource("3_swnid")]
-offset_left = -527.84094
-offset_top = 133.0028
-offset_right = 444.15906
-offset_bottom = 1214.0028
-theme_override_constants/h_separation = 8
-theme_override_constants/v_separation = 8
-columns = 5
-height = 6
-borderSize = 8
+offset_left = -315.04352
+offset_top = -324.8255
+offset_right = 345.95648
+offset_bottom = 336.1745
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = 3
+columns = 8
+width = 8
+height = 8
+cellWidth = 80
+cellHeight = 80
+borderSize = 3
 
 [connection signal="gui_input" from="Grid_Node_2D/Grid" to="." method="_on_grid_gui_input"]
