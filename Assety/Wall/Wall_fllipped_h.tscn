@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://dey48qhlix08s"]
-
-[ext_resource type="Texture2D" uid="uid://dqvrubfdej0wu" path="res://Assety/Wall/wall.png" id="1_ia0a1"]
-
-[node name="Node2D" type="Sprite2D" unique_id=1272282424]
-texture = ExtResource("1_ia0a1")
-flip_h = true
