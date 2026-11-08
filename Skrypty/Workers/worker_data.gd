@@ -4,7 +4,7 @@ class_name WorkerData
 
 @export var ID_pracownika: int = 0
 @export var nazwa_pracownika: String = "Nowy pracownik"
-@export var stan_zatrudnienia: String = "Bez stanowiska"
+@export var praca: String = "Bez stanowiska"
 
 #skillsy
 @export_range(0,100) var cos: int = 50

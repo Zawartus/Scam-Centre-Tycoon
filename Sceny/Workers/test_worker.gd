@@ -10,7 +10,7 @@ func _ready() -> void:
 		return
 		
 	print("Pracownik", data.nazwa_pracownika)
-	print("Stawnowisko", data.stan_zatrudnienia)
+	print("Stawnowisko", data.praca)
 
 func zmiana_szczescia(amount:float) -> void:
 	if data == null:
