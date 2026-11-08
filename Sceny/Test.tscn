@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://uqs3fboebvy" path="res://Assety/Map_layers/floorbase.png" id="2_jtbub"]
 [ext_resource type="Texture2D" uid="uid://dqvrubfdej0wu" path="res://Assety/Map_layers/wall.png" id="3_dy2lw"]
 [ext_resource type="PackedScene" uid="uid://bo1cpe7ekrm1q" path="res://Grid/Grid.tscn" id="3_swnid"]
+[ext_resource type="PackedScene" uid="uid://b0w7cuebv7dun" path="res://Sceny/Workers/workers_UI.tscn" id="6_jtbub"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcnti"]
 texture = ExtResource("2_jtbub")
@@ -65,5 +66,11 @@ height = 8
 cellWidth = 80
 cellHeight = 80
 borderSize = 3
+
+[node name="Workers" parent="." unique_id=888251220 instance=ExtResource("6_jtbub")]
+offset_left = 495.0
+offset_top = -106.0
+offset_right = 495.0
+offset_bottom = -106.0
 
 [connection signal="gui_input" from="Grid_Node_2D/Grid" to="." method="_on_grid_gui_input"]

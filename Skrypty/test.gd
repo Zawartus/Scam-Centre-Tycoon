@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var grid: GridContainer = $Grid_Node_2D/Grid
 @onready var grid_node_2d: Node2D = $Grid_Node_2D
+@onready var workers: Control = $Workers
+
+
 
 const OBJECT = preload("uid://dnrhquilka871")
 
@@ -11,6 +14,7 @@ var targetCell
 var objectCells
 var isValid = false
 var can_open_build_view = true
+var can_open_emplyee_view = true
 
 func _bulidng_ui(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("B_Key") and can_open_build_view:
@@ -42,6 +46,19 @@ func _input(event: InputEvent) -> void:
 		grid_node_2d.hide()
 		print("Closing building view!")
 		can_open_build_view = true
+		
+	#employee_ui
+	if Input.is_action_just_pressed("V_Key") and can_open_emplyee_view:
+		workers.show()
+		print("Emplyee view was opened!")
+		can_open_emplyee_view = false
+		
+	elif Input.is_action_just_pressed("V_Key") and not can_open_emplyee_view:
+		workers.hide()
+		print("Closing emplyee view!")
+		can_open_emplyee_view = true
+		
+		
 	
 
 func _on_grid_gui_input(event: InputEvent) -> void:

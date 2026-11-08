@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b0w7cuebv7dun"]
+
+[node name="Workers_UI" type="Control" unique_id=888251220]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1275002020]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1782826658]
+custom_minimum_size = Vector2(800, 520)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1143853289]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=2093855057]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1385419300]
+layout_mode = 2
+text = "Zarządzanie pracownikami"
+
+[node name="Taby" type="TabContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1711749117]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Kandydaci" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby" unique_id=2005799268]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Kandydaci" unique_id=423734518]
+visible = false
+layout_mode = 2
+
+[node name="Pracownicy" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby" unique_id=1059894492]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Pracownicy" unique_id=1313485595]
+visible = false
+layout_mode = 2
