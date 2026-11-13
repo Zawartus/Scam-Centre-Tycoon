@@ -1,18 +1,23 @@
-extends Resource
 
+extends Resource
 class_name WorkerData
 
-@export var ID_pracownika: int = 0
-@export var nazwa_pracownika: String = "Nowy pracownik"
-@export var praca: String = "Bez stanowiska"
+@export var employee_id: int = 0
+@export var employee_name: String = "Nowy pracownik"
+@export var job: String = "Bez stanowiska"
 
-#skillsy
-@export_range(0,100) var cos: int = 50
-@export_range(0,100) var cos_1: int = 50
-@export_range(0,100) var cos_2: int = 50
+# Umiejętności
+@export_range(0, 100) var praca_pod_presja: int = 50
+@export_range(0, 100) var sila_perswazji: int = 50
+@export_range(0, 100) var teamwork: int = 50
 
-#wymagania
-@export_range(0,100) var komfort: int = 50
+# Potrzeby
+@export_range(0, 100) var komfort: float = 100.0
+@export_range(0, 100) var energy: float = 100.0
 
-#za ile zatrtudnic ich
-@export var salary:int = 32000
+# Finanse
+@export var salary: int = 100
+
+# Praca
+@export var is_hired: bool = false
+@export var workplace_id: int = -1

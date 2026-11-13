@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://b0w7cuebv7dun"]
 
+[ext_resource type="Script" uid="uid://08il10gn3bse" path="res://Sceny/Workers/workers_ui.gd" id="1_f4bhy"]
+[ext_resource type="PackedScene" uid="uid://cmtxfh7ihubk" path="res://WorkerCard.tscn" id="2_jy06a"]
+
 [node name="Workers_UI" type="Control" unique_id=888251220]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f4bhy")
+employee_card_scene = ExtResource("2_jy06a")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1275002020]
 layout_mode = 1
@@ -43,8 +48,7 @@ current_tab = 0
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Kandydaci" unique_id=423734518]
-visible = false
+[node name="CandidateList" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Kandydaci" unique_id=423734518]
 layout_mode = 2
 
 [node name="Pracownicy" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby" unique_id=1059894492]
@@ -52,6 +56,5 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Pracownicy" unique_id=1313485595]
-visible = false
+[node name="WorkerList" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Pracownicy" unique_id=1313485595]
 layout_mode = 2
