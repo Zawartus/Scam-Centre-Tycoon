@@ -1,27 +1,155 @@
 [gd_scene format=3 uid="uid://cmtxfh7ihubk"]
 
 [ext_resource type="Script" uid="uid://do4k7gvpft5a0" path="res://worker_card.gd" id="1_n1ma8"]
+[ext_resource type="Texture2D" uid="uid://lb4r6iahjkob" path="res://Assety zewnętrzne/Stas-bin/7414712add106b9653cf2922e2e81696.jpg" id="2_te2uq"]
 
-[node name="PanelContainer" type="PanelContainer" unique_id=2078910418]
-custom_minimum_size = Vector2(0, 80)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_te2uq"]
+bg_color = Color(0.86064917, 0.21792176, 0.1712758, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck6yy"]
+bg_color = Color(0, 0.7136749, 0.43291178, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt31h"]
+bg_color = Color(0.051236287, 0.6561024, 0.85818696, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="WorkerCard" type="PanelContainer" unique_id=2078910418]
+custom_minimum_size = Vector2(820, 240)
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_n1ma8")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1958802613]
+[node name="Margin" type="MarginContainer" parent="." unique_id=420465201]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Main_row" type="HBoxContainer" parent="Margin" unique_id=1473667804]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Main_column" type="VBoxContainer" parent="Margin/Main_row" unique_id=23003827]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="Margin/Main_row/Main_column" unique_id=744412178]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Portrait" type="TextureRect" parent="Margin/Main_row/Main_column/Header" unique_id=204633035]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("2_te2uq")
+
+[node name="PersonalInfo" type="VBoxContainer" parent="Margin/Main_row/Main_column/Header" unique_id=1534595241]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1624866190]
+[node name="Name" type="Label" parent="Margin/Main_row/Main_column/Header/PersonalInfo" unique_id=1480500003]
+layout_mode = 2
+text = "Grzegorz Jakistam"
+
+[node name="Age" type="Label" parent="Margin/Main_row/Main_column/Header/PersonalInfo" unique_id=483395955]
+layout_mode = 2
+text = "Wiek: 25"
+
+[node name="Origin" type="Label" parent="Margin/Main_row/Main_column/Header/PersonalInfo" unique_id=872405085]
+layout_mode = 2
+text = "Pochodznie: Polska, Podlasie"
+
+[node name="Work_position" type="Label" parent="Margin/Main_row/Main_column/Header/PersonalInfo" unique_id=740375924]
+layout_mode = 2
+text = "Obsługa klienta"
+
+[node name="Description" type="Label" parent="Margin/Main_row/Main_column/Header" unique_id=1868513392]
+layout_mode = 2
+text = "\"Od dzieciaka marzylem zeby zostac pracownikem w 
+ waszym call center!\""
+
+[node name="Stats" type="VBoxContainer" parent="Margin/Main_row/Main_column" unique_id=1645519868]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=2110848236]
+[node name="Hapiness" type="HBoxContainer" parent="Margin/Main_row/Main_column/Stats" unique_id=288069075]
 layout_mode = 2
-text = "Josuha"
 
-[node name="StatsLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=497189791]
+[node name="H_level" type="Label" parent="Margin/Main_row/Main_column/Stats/Hapiness" unique_id=1868349913]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
-text = "zywotbnosc"
+text = "Szczęście"
 
-[node name="ActionButton" type="Button" parent="HBoxContainer" unique_id=124722319]
+[node name="H_bar" type="ProgressBar" parent="Margin/Main_row/Main_column/Stats/Hapiness" unique_id=1858204440]
+custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
-text = "Hire"
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9235167, 0.16720504, 0.18791172, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_te2uq")
+value = 80.0
+show_percentage = false
+
+[node name="Pressure" type="HBoxContainer" parent="Margin/Main_row/Main_column/Stats" unique_id=644732191]
+layout_mode = 2
+
+[node name="Pressure_leve" type="Label" parent="Margin/Main_row/Main_column/Stats/Pressure" unique_id=1842877498]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Praca pod presją"
+
+[node name="Pressure_level" type="ProgressBar" parent="Margin/Main_row/Main_column/Stats/Pressure" unique_id=147416786]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_ck6yy")
+value = 50.0
+show_percentage = false
+
+[node name="Persuasion" type="HBoxContainer" parent="Margin/Main_row/Main_column/Stats" unique_id=1070633858]
+layout_mode = 2
+
+[node name="Persuasion_level" type="Label" parent="Margin/Main_row/Main_column/Stats/Persuasion" unique_id=1372122192]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "Siła preswazji"
+
+[node name="Persuasion_bar" type="ProgressBar" parent="Margin/Main_row/Main_column/Stats/Persuasion" unique_id=1066907538]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_vt31h")
+value = 30.0
+show_percentage = false
+
+[node name="Hire" type="PanelContainer" parent="Margin/Main_row/Main_column" unique_id=1052488645]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+
+[node name="HireColumn" type="VBoxContainer" parent="Margin/Main_row/Main_column/Hire" unique_id=1167817725]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Margin/Main_row/Main_column/Hire/HireColumn" unique_id=850188411]
+layout_mode = 2
+text = "Zatrudnij"
+
+[node name="Spacer" type="Control" parent="Margin/Main_row/Main_column/Hire/HireColumn" unique_id=1483317165]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Salary" type="Label" parent="Margin/Main_row/Main_column/Hire/HireColumn" unique_id=632701180]
+layout_mode = 2
+text = "1500"
+horizontal_alignment = 1

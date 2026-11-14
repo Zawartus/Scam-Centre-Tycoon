@@ -48,6 +48,9 @@ current_tab = 0
 layout_mode = 2
 metadata/_tab_index = 0
 
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Kandydaci" unique_id=1808329884]
+layout_mode = 2
+
 [node name="CandidateList" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Kandydaci" unique_id=423734518]
 layout_mode = 2
 
@@ -55,6 +58,9 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Pracownicy" unique_id=1634945164]
+layout_mode = 2
 
 [node name="WorkerList" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Pracownicy" unique_id=1313485595]
 layout_mode = 2

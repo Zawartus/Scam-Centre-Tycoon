@@ -3,6 +3,8 @@ extends Control
 
 @export var employee_card_scene: PackedScene
 
+
+
 @onready var candidate_list: VBoxContainer = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Kandydaci/CandidateList
 
 @onready var worker_list: VBoxContainer = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Pracownicy/WorkerList
@@ -31,7 +33,7 @@ func refresh_lists() -> void:
 		push_warning("Nie przypisano WorkerCard!")
 		return
 
-	#dodowanie karty kandydatow
+	#dodowani karty kandydatow
 	for worker in WorkerManager.candidates:
 		var card = employee_card_scene.instantiate()
 		candidate_list.add_child(card)
@@ -40,7 +42,7 @@ func refresh_lists() -> void:
 		print("Dodano karte: ", worker.employee_name)
 		print("Liczba kart: ", candidate_list.get_child_count())
 
-	#doddawanie karty zatrudnionych
+	# Tworzymy karty zatrudnionych
 	for worker in WorkerManager.employees:
 		var card = employee_card_scene.instantiate()
 		worker_list.add_child(card)
