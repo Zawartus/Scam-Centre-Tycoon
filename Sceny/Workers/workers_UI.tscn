@@ -13,7 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_f4bhy")
 employee_card_scene = ExtResource("2_jy06a")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1275002020]
+[node name="CenterContainer" type="Control" parent="." unique_id=232997962]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,11 @@ grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1782826658]
 custom_minimum_size = Vector2(800, 520)
-layout_mode = 2
+layout_mode = 1
+offset_left = 176.0
+offset_top = 64.0
+offset_right = 976.0
+offset_bottom = 584.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1143853289]
 layout_mode = 2
@@ -36,7 +40,9 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1385419300]
+custom_minimum_size = Vector2(35, 0)
 layout_mode = 2
+size_flags_vertical = 1
 text = "Zarządzanie pracownikami"
 
 [node name="Taby" type="TabContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1711749117]
