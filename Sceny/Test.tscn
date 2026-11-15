@@ -47,6 +47,13 @@ tile_set = SubResource("TileSet_ch1j7")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1670258162]
 
+[node name="Workers" parent="." unique_id=888251220 instance=ExtResource("6_jtbub")]
+z_index = 2
+offset_left = 495.0
+offset_top = -105.99998
+offset_right = 495.0
+offset_bottom = -105.99998
+
 [node name="Grid_Node_2D" type="Node2D" parent="." unique_id=1887677334]
 visible = false
 position = Vector2(-6, -8.999999)
@@ -66,11 +73,5 @@ height = 8
 cellWidth = 80
 cellHeight = 80
 borderSize = 3
-
-[node name="Workers" parent="." unique_id=888251220 instance=ExtResource("6_jtbub")]
-offset_left = 495.0
-offset_top = -106.0
-offset_right = 495.0
-offset_bottom = -106.0
 
 [connection signal="gui_input" from="Grid_Node_2D/Grid" to="." method="_on_grid_gui_input"]

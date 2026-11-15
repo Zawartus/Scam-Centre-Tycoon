@@ -17,12 +17,6 @@ var drag_offset: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	WorkerManager.employees_changed.connect(refresh_lists)
 	refresh_lists()
-	print("=== WORKERS UI TEST ===")
-	print("Kandydaci: ", WorkerManager.candidates.size())
-	print("Pracownicy: ", WorkerManager.employees.size())
-	print("Scena karty: ", employee_card_scene)
-	print("Lista kandydatow: ", candidate_list)
-	print("Lista pracownikow: ", worker_list)
 	drag_handle.mouse_filter = Control.MOUSE_FILTER_STOP
 	drag_handle.mouse_default_cursor_shape = Control.CURSOR_MOVE
 	drag_handle.gui_input.connect(_on_drag_handle_gui_input)

@@ -26,9 +26,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="WorkerCard" type="PanelContainer" unique_id=2078910418]
-custom_minimum_size = Vector2(820, 240)
+custom_minimum_size = Vector2(0, 200)
 offset_right = 40.0
 offset_bottom = 40.0
+size_flags_horizontal = 3
 script = ExtResource("1_n1ma8")
 
 [node name="Margin" type="MarginContainer" parent="." unique_id=420465201]
@@ -133,23 +134,28 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_vt31h")
 value = 30.0
 show_percentage = false
 
-[node name="Hire" type="PanelContainer" parent="Margin/Main_row/Main_column" unique_id=1052488645]
+[node name="Hire" type="PanelContainer" parent="Margin/Main_row" unique_id=1052488645]
 custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
 
-[node name="HireColumn" type="VBoxContainer" parent="Margin/Main_row/Main_column/Hire" unique_id=1167817725]
+[node name="HireColumn" type="VBoxContainer" parent="Margin/Main_row/Hire" unique_id=1167817725]
 custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Margin/Main_row/Main_column/Hire/HireColumn" unique_id=850188411]
+[node name="Button" type="Button" parent="Margin/Main_row/Hire/HireColumn" unique_id=850188411]
+custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
+size_flags_vertical = 3
 text = "Zatrudnij"
 
-[node name="Spacer" type="Control" parent="Margin/Main_row/Main_column/Hire/HireColumn" unique_id=1483317165]
+[node name="Spacer" type="Control" parent="Margin/Main_row/Hire/HireColumn" unique_id=1483317165]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Salary" type="Label" parent="Margin/Main_row/Main_column/Hire/HireColumn" unique_id=632701180]
+[node name="Salary" type="Label" parent="Margin/Main_row/Hire/HireColumn" unique_id=632701180]
+custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
 text = "1500"
 horizontal_alignment = 1
+vertical_alignment = 1

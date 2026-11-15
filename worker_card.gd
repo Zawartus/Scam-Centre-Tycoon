@@ -19,8 +19,8 @@ var is_candidate: bool = true
 @onready var persuasion_bar: ProgressBar = $Margin/Main_row/Main_column/Stats/Persuasion/Persuasion_bar
 
 #zatrudnianie
-@onready var button: Button = $Margin/Main_row/Main_column/Hire/HireColumn/Button
-@onready var salary: Label = $Margin/Main_row/Main_column/Hire/HireColumn/Salary
+@onready var button: Button = $Margin/Main_row/Hire/HireColumn/Button
+@onready var salary: Label = $Margin/Main_row/Hire/HireColumn/Salary
 
 func _ready() -> void:
 	button.pressed.connect(_on_action_button_pressed)
