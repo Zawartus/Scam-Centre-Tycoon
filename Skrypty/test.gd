@@ -4,6 +4,7 @@ extends Node2D
 @onready var grid_node_2d: Node2D = $Grid_Node_2D
 @onready var workers: Control = $Workers
 
+@export var worker_data: WorkerData
 
 
 const OBJECT = preload("uid://dnrhquilka871")
@@ -36,7 +37,12 @@ func _input(event: InputEvent) -> void:
 		object = newPlacemnt
 	elif Input.is_action_just_pressed("LeftMouse") and isValid and not can_open_build_view:
 		_place_placement(objectCells)
-	
+		
+		
+		WorkerManager.free_workers += 1
+		print(WorkerManager.free_workers)
+
+
 	#buliing_ui
 	if Input.is_action_just_pressed("B_Key") and can_open_build_view:
 		print("Building view was opened!")

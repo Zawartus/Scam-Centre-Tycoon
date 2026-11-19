@@ -29,3 +29,6 @@ class_name WorkerData
 # Praca
 @export var is_hired: bool = false
 @export var workplace_id: int = -1
+
+#wolni workerzy
+@export var free_workers: int = 0

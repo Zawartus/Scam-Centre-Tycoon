@@ -27,32 +27,42 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="WorkerCard" type="Control" unique_id=1656827393]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(712, 537)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1000.0
-offset_bottom = 229.0
+offset_right = 712.0
+offset_bottom = 537.0
 size_flags_horizontal = 3
 script = ExtResource("1_kd0b8")
 
 [node name="Background" type="TextureRect" parent="." unique_id=93721879]
-layout_mode = 0
-offset_left = -228.0
-offset_top = -630.0
-offset_right = 772.0
-offset_bottom = 370.0
-scale = Vector2(1.5, 1.5)
+custom_minimum_size = Vector2(712, 537)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_i7uc0")
+expand_mode = 1
+stretch_mode = 3
 
 [node name="Margin" type="MarginContainer" parent="." unique_id=420465201]
-layout_mode = 0
-offset_right = 1000.0
-offset_bottom = 229.0
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -448.0
+offset_right = 951.3334
+offset_bottom = 81.33331
+grow_vertical = 0
+scale = Vector2(0.75, 0.75)
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 30
 
 [node name="MainColumn" type="VBoxContainer" parent="Margin" unique_id=873358805]
 layout_mode = 2
