@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://21n2ouk00lja"]
+
+[ext_resource type="Script" uid="uid://br71ed7tf0jub" path="res://Sceny/Workers/test_worker.gd" id="1_e6suk"]
+[ext_resource type="Script" uid="uid://dlm33oh7ye0ra" path="res://Skrypty/Workers/worker_data.gd" id="2_crmsy"]
+[ext_resource type="Texture2D" uid="uid://bj04ide727ipv" path="res://Assety zewnętrzne/Kenny/Characters/Male/Male_3_Idle0.png" id="2_yiloh"]
+
+[sub_resource type="Resource" id="Resource_crmsy"]
+script = ExtResource("2_crmsy")
+metadata/_custom_type_script = "uid://dlm33oh7ye0ra"
+
+[node name="CharacterBody2D" type="Node2D" unique_id=1139953901]
+script = ExtResource("1_e6suk")
+data = SubResource("Resource_crmsy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1534509580]
+texture = ExtResource("2_yiloh")

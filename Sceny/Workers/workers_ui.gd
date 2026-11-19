@@ -1,0 +1,69 @@
+
+extends Control
+
+@export var employee_card_scene: PackedScene
+
+
+
+@onready var candidate_list: VBoxContainer = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Kandydaci/CandidateList
+
+@onready var worker_list: VBoxContainer = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Pracownicy/WorkerList
+@onready var drag_handle: Label = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Label
+@onready var window_panel: PanelContainer = $CenterContainer/PanelContainer
+
+var dragging: bool = false
+var drag_offset: Vector2 = Vector2.ZERO
+
+func _ready() -> void:
+	WorkerManager.employees_changed.connect(refresh_lists)
+	refresh_lists()
+	drag_handle.mouse_filter = Control.MOUSE_FILTER_STOP
+	drag_handle.mouse_default_cursor_shape = Control.CURSOR_MOVE
+	drag_handle.gui_input.connect(_on_drag_handle_gui_input)
+
+	call_deferred("_center_window")
+
+func _on_drag_handle_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			dragging = event.pressed
+			
+			if dragging:
+				drag_offset = get_global_mouse_position() - window_panel.global_position
+
+#przsuwanie okienka
+func _process(_delta: float) -> void:
+	if not dragging:
+		return
+	
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		dragging = false
+		return
+	window_panel.global_position = get_global_mouse_position() - drag_offset
+
+func refresh_lists() -> void:
+	#Usuwamy stare karty
+	for child in candidate_list.get_children():
+		child.queue_free()
+
+	for child in worker_list.get_children():
+		child.queue_free()
+
+	if employee_card_scene == null:
+		push_warning("Nie przypisano WorkerCard!")
+		return
+
+	#dodowani karty kandydatow
+	for worker in WorkerManager.candidates:
+		var card = employee_card_scene.instantiate()
+		candidate_list.add_child(card)
+		card.setup(worker, true)
+		
+		print("Dodano karte: ", worker.employee_name)
+		print("Liczba kart: ", candidate_list.get_child_count())
+
+	# Tworzymy karty zatrudnionych
+	for worker in WorkerManager.employees:
+		var card = employee_card_scene.instantiate()
+		worker_list.add_child(card)
+		card.setup(worker, false)

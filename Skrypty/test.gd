@@ -1,6 +1,10 @@
 extends Node2D
 
 @onready var grid: GridContainer = $Grid_Node_2D/Grid
+@onready var grid_node_2d: Node2D = $Grid_Node_2D
+@onready var workers: Control = $Workers
+
+
 
 const OBJECT = preload("uid://dnrhquilka871")
 
@@ -9,18 +13,53 @@ var object
 var targetCell
 var objectCells
 var isValid = false
+var can_open_build_view = true
+var can_open_emplyee_view = true
+
+func _bulidng_ui(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("B_Key") and can_open_build_view:
+		print("Building view was opened!")
+		can_open_build_view = false
+		
+		
+
+
 
 func _ready() -> void:
 	gridSize = Vector2(grid.cellWidth,grid.cellHeight)
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("LeftMouse") and not object:
+	if Input.is_action_just_pressed("LeftMouse") and not object and not can_open_build_view:
 		var newPlacemnt = OBJECT.instantiate()
 		add_child(newPlacemnt)
 		newPlacemnt.global_position = get_global_mouse_position()
 		object = newPlacemnt
-	elif Input.is_action_just_pressed("LeftMouse") and isValid:
+	elif Input.is_action_just_pressed("LeftMouse") and isValid and not can_open_build_view:
 		_place_placement(objectCells)
+	
+	#buliing_ui
+	if Input.is_action_just_pressed("B_Key") and can_open_build_view:
+		print("Building view was opened!")
+		can_open_build_view = false
+		grid_node_2d.show()
+	elif Input.is_action_just_pressed("B_Key") and not can_open_build_view:
+		grid_node_2d.hide()
+		print("Closing building view!")
+		can_open_build_view = true
+		
+	#employee_ui
+	if Input.is_action_just_pressed("V_Key") and can_open_emplyee_view:
+		workers.show()
+		print("Emplyee view was opened!")
+		can_open_emplyee_view = false
+		
+	elif Input.is_action_just_pressed("V_Key") and not can_open_emplyee_view:
+		workers.hide()
+		print("Closing emplyee view!")
+		can_open_emplyee_view = true
+		
+		
+	
 
 func _on_grid_gui_input(event: InputEvent) -> void:
 	if not object: return

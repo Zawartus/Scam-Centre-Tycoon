@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j3ldlhionrkb"
-path="res://.godot/imported/barrelsStacked_E.png-b8289a4e075d0189129c1b089081ec23.ctex"
+uid="uid://ds5y4djp3cxgg"
+path="res://.godot/imported/wall_scaled.png-d0ff3b69fd3692159ab8a0dc13987074.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assety/barrelsStacked_E.png"
-dest_files=["res://.godot/imported/barrelsStacked_E.png-b8289a4e075d0189129c1b089081ec23.ctex"]
+source_file="res://Assety/Map_layers/wall_scaled.png"
+dest_files=["res://.godot/imported/wall_scaled.png-d0ff3b69fd3692159ab8a0dc13987074.ctex"]
 
 [params]
 

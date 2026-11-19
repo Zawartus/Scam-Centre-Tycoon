@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://baxaisjl4q8dn"]
 
-[ext_resource type="Script" uid="uid://nmj0s3p5yn0m" path="res://Sceny/test.gd" id="1_dy2lw"]
+[ext_resource type="Script" uid="uid://nmj0s3p5yn0m" path="res://Skrypty/test.gd" id="1_dy2lw"]
 [ext_resource type="PackedScene" uid="uid://i6w84gp6gffw" path="res://Sceny/camera.tscn" id="2_c1fdf"]
-[ext_resource type="Texture2D" uid="uid://uqs3fboebvy" path="res://Assety/Wall/floorbase.png" id="2_jtbub"]
-[ext_resource type="Texture2D" uid="uid://dstmx13to66ar" path="res://Assety/Wall/wall_3.png" id="3_jtbub"]
+[ext_resource type="Texture2D" uid="uid://uqs3fboebvy" path="res://Assety/Map_layers/floorbase.png" id="2_jtbub"]
+[ext_resource type="Texture2D" uid="uid://dqvrubfdej0wu" path="res://Assety/Map_layers/wall.png" id="3_dy2lw"]
 [ext_resource type="PackedScene" uid="uid://bo1cpe7ekrm1q" path="res://Grid/Grid.tscn" id="3_swnid"]
-[ext_resource type="Texture2D" uid="uid://cwqsl8r51vt5q" path="res://Assety/Wall/wall_3_H.png" id="4_mwjvl"]
+[ext_resource type="PackedScene" uid="uid://b0w7cuebv7dun" path="res://Sceny/Workers/workers_UI.tscn" id="6_jtbub"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcnti"]
 texture = ExtResource("2_jtbub")
@@ -17,53 +17,62 @@ tile_shape = 1
 tile_size = Vector2i(409, 205)
 sources/0 = SubResource("TileSetAtlasSource_vcnti")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qijql"]
-texture = ExtResource("3_jtbub")
-texture_region_size = Vector2i(204, 102)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtbub"]
+texture = ExtResource("3_dy2lw")
+texture_region_size = Vector2i(209, 157)
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 20)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckdtg"]
-texture = ExtResource("4_mwjvl")
-texture_region_size = Vector2i(204, 102)
-0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-105, -27)
+0:0/0/z_index = 1
 
 [sub_resource type="TileSet" id="TileSet_ch1j7"]
 tile_shape = 1
-tile_size = Vector2i(204, 102)
-sources/1 = SubResource("TileSetAtlasSource_qijql")
-sources/2 = SubResource("TileSetAtlasSource_ckdtg")
+tile_size = Vector2i(409, 205)
+sources/0 = SubResource("TileSetAtlasSource_jtbub")
 
 [node name="Test" type="Node2D" unique_id=352370236]
 script = ExtResource("1_dy2lw")
 
 [node name="Ground_layer" type="TileMapLayer" parent="." unique_id=543803908]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD+//7/AAAAAAAAAAD+//3/AAAAAAAAAAD///7/AAAAAAAAAAD///z/AAAAAAAAAAD///3/AAAAAAAAAAD+/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAD+/wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAABAAAAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_yp2da")
 
 [node name="Wall_layer" type="TileMapLayer" parent="." unique_id=293517676]
 y_sort_enabled = true
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD+//7/AAAAAAAAAAD+//3/AAAAAAAAAAD///z/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ch1j7")
 
 [node name="Camera" parent="." unique_id=1691480734 instance=ExtResource("2_c1fdf")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1670258162]
 
+[node name="Workers" parent="." unique_id=888251220 instance=ExtResource("6_jtbub")]
+visible = false
+z_index = 2
+offset_left = 495.0
+offset_top = -105.99998
+offset_right = 495.0
+offset_bottom = -105.99998
+
 [node name="Grid_Node_2D" type="Node2D" parent="." unique_id=1887677334]
+visible = false
+position = Vector2(-6, -8.999999)
 rotation = 0.46425757
 skew = 0.6440265
 
 [node name="Grid" parent="Grid_Node_2D" unique_id=1593921481 instance=ExtResource("3_swnid")]
-offset_left = -493.83115
-offset_top = -313.4992
-offset_right = 478.16885
-offset_bottom = 767.5008
-theme_override_constants/h_separation = 9
-theme_override_constants/v_separation = 9
-columns = 9
-width = 9
-height = 10
-borderSize = 9
+offset_left = -315.04352
+offset_top = -324.8255
+offset_right = 345.95648
+offset_bottom = 336.1745
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = 3
+columns = 8
+width = 8
+height = 8
+cellWidth = 80
+cellHeight = 80
+borderSize = 3
 
 [connection signal="gui_input" from="Grid_Node_2D/Grid" to="." method="_on_grid_gui_input"]

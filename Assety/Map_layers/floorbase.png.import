@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clprayhu225mf"
-path="res://.godot/imported/wall_scaled2.png-8dd5a6fcca3ea3aae4421cd6836a32a4.ctex"
+uid="uid://uqs3fboebvy"
+path="res://.godot/imported/floorbase.png-8245afccae39e94ac90737c84a3a3015.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assety/Wall/wall_scaled2.png"
-dest_files=["res://.godot/imported/wall_scaled2.png-8dd5a6fcca3ea3aae4421cd6836a32a4.ctex"]
+source_file="res://Assety/Map_layers/floorbase.png"
+dest_files=["res://.godot/imported/floorbase.png-8245afccae39e94ac90737c84a3a3015.ctex"]
 
 [params]
 

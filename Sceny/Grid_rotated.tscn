@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcpi16u7us4ng"]
 
-[ext_resource type="Script" uid="uid://yyqawbkw3f75" path="res://Sceny/node2d_grid.gd" id="1_f0ok0"]
+[ext_resource type="Script" uid="uid://yyqawbkw3f75" path="res://Skrypty/node2d_grid.gd" id="1_f0ok0"]
 [ext_resource type="PackedScene" uid="uid://bo1cpe7ekrm1q" path="res://Grid/Grid.tscn" id="1_ofhoq"]
 
 [node name="Node2D" type="Node2D" unique_id=1803570109]
