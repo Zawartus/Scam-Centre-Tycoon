@@ -1,26 +1,31 @@
 
-extends PanelContainer
+extends Control
 
 var worker_data: WorkerData
 var is_candidate: bool = true
 
-#dane osobowe jakies
-@onready var name_worker: Label = $Margin/Main_row/Main_column/Header/PersonalInfo/Name
-@onready var age: Label = $Margin/Main_row/Main_column/Header/PersonalInfo/Age
-@onready var origin: Label = $Margin/Main_row/Main_column/Header/PersonalInfo/Origin
-@onready var work_position: Label = $Margin/Main_row/Main_column/Header/PersonalInfo/Work_position
 
-@onready var description: Label = $Margin/Main_row/Main_column/Header/Description
-@onready var portrait: TextureRect = $Margin/Main_row/Main_column/Header/Portrait
 
-#staty
-@onready var h_bar: ProgressBar = $Margin/Main_row/Main_column/Stats/Hapiness/H_bar
-@onready var pressure_level: ProgressBar = $Margin/Main_row/Main_column/Stats/Pressure/Pressure_level
-@onready var persuasion_bar: ProgressBar = $Margin/Main_row/Main_column/Stats/Persuasion/Persuasion_bar
+# Dane osobowe
+@onready var name_worker: Label = $Margin/MainColumn/TopSection/LeftContent/Header/PersonalInfo/Name
+@onready var age: Label = $Margin/MainColumn/TopSection/LeftContent/Header/PersonalInfo/Age
+@onready var origin: Label = $Margin/MainColumn/TopSection/LeftContent/Header/PersonalInfo/Origin
+@onready var work_position: Label = $Margin/MainColumn/TopSection/LeftContent/Header/PersonalInfo/Work_position
 
-#zatrudnianie
-@onready var button: Button = $Margin/Main_row/Hire/HireColumn/Button
-@onready var salary: Label = $Margin/Main_row/Hire/HireColumn/Salary
+# Opis i portret
+@onready var portrait: TextureRect = $Margin/MainColumn/TopSection/LeftContent/Header/Portrait
+@onready var description: Label = $Margin/MainColumn/TopSection/LeftContent/Header/Description
+
+# Statystyki
+@onready var h_bar: ProgressBar = $Margin/MainColumn/TopSection/LeftContent/Stats/Hapiness/H_bar
+
+@onready var pressure_level: ProgressBar = $Margin/MainColumn/TopSection/LeftContent/Stats/Pressure/Pressure_level
+@onready var persuasion_bar: ProgressBar = $Margin/MainColumn/TopSection/LeftContent/Stats/Persuasion/Persuasion_bar
+
+# Zatrudnianie
+@onready var button: Button = $Margin/MainColumn/BottomRow/Hire/HireColumn/Button
+@onready var salary: Label = $Margin/MainColumn/BottomRow/Hire/HireColumn/Salary
+
 
 func _ready() -> void:
 	button.pressed.connect(_on_action_button_pressed)

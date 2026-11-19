@@ -22,12 +22,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1782826658]
-custom_minimum_size = Vector2(950, 520)
+custom_minimum_size = Vector2(860, 680)
 layout_mode = 1
-offset_left = 176.0
-offset_top = 64.0
-offset_right = 976.0
-offset_bottom = 584.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1143853289]
@@ -57,9 +58,11 @@ metadata/_tab_index = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Kandydaci" unique_id=1808329884]
 layout_mode = 2
+horizontal_scroll_mode = 0
 
 [node name="CandidateList" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Kandydaci" unique_id=423734518]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Pracownicy" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby" unique_id=1059894492]
 visible = false
@@ -68,6 +71,8 @@ metadata/_tab_index = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Pracownicy" unique_id=1634945164]
 layout_mode = 2
+horizontal_scroll_mode = 0
 
 [node name="WorkerList" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Taby/Pracownicy" unique_id=1313485595]
 layout_mode = 2
+size_flags_horizontal = 3
