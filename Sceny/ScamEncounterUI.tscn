@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dcxmqgve17k67"]
+
+[ext_resource type="Script" uid="uid://cr6dct20dtm8k" path="res://Scripts/scam_encounter_ui.gd" id="1_hvvr5"]
+
+[node name="Scam_encounter_UI" type="Control" unique_id=1692885750]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hvvr5")
+
+[node name="PromptLabel" type="RichTextLabel" parent="." unique_id=1582358130]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 100.0
+offset_top = 5.0
+offset_right = 286.0
+offset_bottom = 116.0
+
+[node name="ChoicesBox" type="VBoxContainer" parent="." unique_id=1013179055]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 145.0
+offset_top = 93.0
+offset_right = 307.0
+offset_bottom = 209.0
+
+[node name="SuspicionBar" type="ProgressBar" parent="." unique_id=1963635693]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 424.0
+offset_top = 20.0
+offset_right = 519.0
+offset_bottom = 47.0
+
+[node name="ReactionLabel" type="Label" parent="." unique_id=1737378005]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 98.0
+offset_top = 251.0
+offset_right = 272.0
+offset_bottom = 372.0
+
+[node name="ResultLabel" type="Label" parent="." unique_id=1879702334]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 449.0
+offset_top = 302.0
+offset_right = 649.0
+offset_bottom = 401.0
+
+[node name="CloseButton" type="Button" parent="." unique_id=1415998735]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 483.0
+offset_top = 246.0
+offset_right = 554.0
+offset_bottom = 277.0
+text = "Zamknij"

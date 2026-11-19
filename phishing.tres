@@ -1,0 +1,92 @@
+[gd_resource type="Resource" script_class="ScamDefinition" format=3 uid="uid://bbvbxhgycb2t4"]
+
+[ext_resource type="Script" uid="uid://ch6dtem88uowa" path="res://Scripts/scam_definition.gd" id="1_5h14l"]
+[ext_resource type="Script" uid="uid://du6w6wiktkd1" path="res://Scripts/scam_step.gd" id="2_lo3cn"]
+[ext_resource type="Script" uid="uid://kbmno5svbet2" path="res://Scripts/scam_choice.gd" id="3_lo3cn"]
+
+[sub_resource type="Resource" id="Resource_k7s5s"]
+script = ExtResource("3_lo3cn")
+text = "Spokojnie, podaję imię i numer oddziału."
+suspicion_delta = 5
+client_reaction = "No dobrze, brzmi wiarygodnie."
+metadata/_custom_type_script = "uid://kbmno5svbet2"
+
+[sub_resource type="Resource" id="Resource_t44vs"]
+script = ExtResource("3_lo3cn")
+text = "Proszę nie tracić czasu, sprawa jest pilna!"
+suspicion_delta = 25
+client_reaction = "Hmm, dlaczego się pan tak spieszy?"
+metadata/_custom_type_script = "uid://kbmno5svbet2"
+
+[sub_resource type="Resource" id="Resource_fb12v"]
+script = ExtResource("3_lo3cn")
+text = "Rozumiem ostrożność, proszę sprawdzić numer na stronie banku."
+suspicion_delta = -5
+client_reaction = "o, to uczciwe podejście."
+metadata/_custom_type_script = "uid://kbmno5svbet2"
+
+[sub_resource type="Resource" id="Resource_ea5bp"]
+script = ExtResource("2_lo3cn")
+prompt = "Halo? Dzwoni pan z banku? Skąd mam pewność, że to nie oszustwo?"
+choices = Array[ExtResource("3_lo3cn")]([SubResource("Resource_k7s5s"), SubResource("Resource_t44vs"), SubResource("Resource_fb12v")])
+metadata/_custom_type_script = "uid://du6w6wiktkd1"
+
+[sub_resource type="Resource" id="Resource_hqikh"]
+script = ExtResource("3_lo3cn")
+text = "Tylko numer konta do weryfikacji."
+suspicion_delta = 10
+client_reaction = "Ok, to chyba nie problem."
+metadata/_custom_type_script = "uid://kbmno5svbet2"
+
+[sub_resource type="Resource" id="Resource_357rb"]
+script = ExtResource("3_lo3cn")
+text = "Pełne dane karty, szybciej to załatwimy."
+suspicion_delta = 30
+client_reaction = "Chwila, to brzmi podejrzanie…"
+metadata/_custom_type_script = "uid://kbmno5svbet2"
+
+[sub_resource type="Resource" id="Resource_q6dt2"]
+script = ExtResource("3_lo3cn")
+text = "Nic, sam pan wszystko zatwierdzi w aplikacji."
+client_reaction = "A, to wygodne."
+metadata/_custom_type_script = "uid://kbmno5svbet2"
+
+[sub_resource type="Resource" id="Resource_oq0he"]
+script = ExtResource("2_lo3cn")
+prompt = "Dobrze… A co dokładnie jest panu ode mnie potrzebne?"
+choices = Array[ExtResource("3_lo3cn")]([SubResource("Resource_hqikh"), SubResource("Resource_357rb"), SubResource("Resource_q6dt2")])
+metadata/_custom_type_script = "uid://du6w6wiktkd1"
+
+[sub_resource type="Resource" id="Resource_07g70"]
+script = ExtResource("3_lo3cn")
+text = "Tak, to standardowa procedura."
+suspicion_delta = 15
+client_reaction = "No dobrze…"
+metadata/_custom_type_script = "uid://kbmno5svbet2"
+
+[sub_resource type="Resource" id="Resource_hoha4"]
+script = ExtResource("3_lo3cn")
+text = "Proszę się nie martwić, to ubezpieczone."
+suspicion_delta = 20
+client_reaction = "Hmm, a skąd ta pewność?"
+metadata/_custom_type_script = "uid://kbmno5svbet2"
+
+[sub_resource type="Resource" id="Resource_wahs8"]
+script = ExtResource("3_lo3cn")
+text = "Zadzwonię do pana po przelewie, żeby potwierdzić."
+suspicion_delta = 5
+client_reaction = "Reaction: W porządku, to uspokaja."
+metadata/_custom_type_script = "uid://kbmno5svbet2"
+
+[sub_resource type="Resource" id="Resource_y82bf"]
+script = ExtResource("2_lo3cn")
+prompt = "Czyli mam przelać pieniądze na to konto bezpieczeństwa?"
+choices = Array[ExtResource("3_lo3cn")]([SubResource("Resource_07g70"), SubResource("Resource_hoha4"), SubResource("Resource_wahs8")])
+metadata/_custom_type_script = "uid://du6w6wiktkd1"
+
+[resource]
+script = ExtResource("1_5h14l")
+id = &"phishing"
+display_name = "Fałszywy bank"
+steps = Array[ExtResource("2_lo3cn")]([SubResource("Resource_ea5bp"), SubResource("Resource_oq0he"), SubResource("Resource_y82bf")])
+metadata/_custom_type_script = "uid://ch6dtem88uowa"
