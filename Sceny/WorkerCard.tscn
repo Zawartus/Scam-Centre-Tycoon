@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cmtxfh7ihubk"]
 
-[ext_resource type="Script" uid="uid://do4k7gvpft5a0" path="res://worker_card.gd" id="1_n1ma8"]
-[ext_resource type="Texture2D" uid="uid://lb4r6iahjkob" path="res://Assety zewnętrzne/Stas-bin/7414712add106b9653cf2922e2e81696.jpg" id="2_te2uq"]
+[ext_resource type="Script" uid="uid://do4k7gvpft5a0" path="res://Sceny/worker_card.gd" id="1_kd0b8"]
+[ext_resource type="Texture2D" uid="uid://lb4r6iahjkob" path="res://Assety zewnętrzne/Stas-bin/7414712add106b9653cf2922e2e81696.jpg" id="2_kd0b8"]
+[ext_resource type="Texture2D" uid="uid://dhwxfed771282" path="res://Assety/Workers/FIles.png" id="3_i7uc0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_te2uq"]
 bg_color = Color(0.86064917, 0.21792176, 0.1712758, 1)
@@ -30,7 +31,12 @@ custom_minimum_size = Vector2(0, 200)
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
-script = ExtResource("1_n1ma8")
+script = ExtResource("1_kd0b8")
+
+[node name="Background" type="TextureRect" parent="." unique_id=93721879]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_i7uc0")
 
 [node name="Margin" type="MarginContainer" parent="." unique_id=420465201]
 layout_mode = 2
@@ -55,7 +61,7 @@ theme_override_constants/separation = 12
 custom_minimum_size = Vector2(100, 100)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("2_te2uq")
+texture = ExtResource("2_kd0b8")
 
 [node name="PersonalInfo" type="VBoxContainer" parent="Margin/Main_row/Main_column/Header" unique_id=1534595241]
 custom_minimum_size = Vector2(180, 0)

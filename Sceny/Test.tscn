@@ -48,6 +48,7 @@ tile_set = SubResource("TileSet_ch1j7")
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1670258162]
 
 [node name="Workers" parent="." unique_id=888251220 instance=ExtResource("6_jtbub")]
+visible = false
 z_index = 2
 offset_left = 495.0
 offset_top = -105.99998

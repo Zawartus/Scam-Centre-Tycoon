@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0w7cuebv7dun"]
 
 [ext_resource type="Script" uid="uid://08il10gn3bse" path="res://Sceny/Workers/workers_ui.gd" id="1_f4bhy"]
-[ext_resource type="PackedScene" uid="uid://cmtxfh7ihubk" path="res://WorkerCard.tscn" id="2_jy06a"]
+[ext_resource type="PackedScene" uid="uid://cmtxfh7ihubk" path="res://Sceny/WorkerCard.tscn" id="2_jy06a"]
 
 [node name="Workers_UI" type="Control" unique_id=888251220]
 layout_mode = 3
