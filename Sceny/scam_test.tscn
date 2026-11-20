@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://wihsl5xg6xc0"]
+
+[ext_resource type="Script" uid="uid://7d40l36yxw3w" path="res://scam_test.gd" id="1_6xqgx"]
+[ext_resource type="PackedScene" uid="uid://dcxmqgve17k67" path="res://Sceny/ScamEncounterUI.tscn" id="2_7ac6i"]
+[ext_resource type="Resource" uid="uid://bbvbxhgycb2t4" path="res://phishing.tres" id="2_u52o4"]
+
+[node name="ScamTest" type="Node" unique_id=1706017588]
+script = ExtResource("1_6xqgx")
+test_scam = ExtResource("2_u52o4")
+
+[node name="ScamEncounterUI" parent="." unique_id=1692885750 instance=ExtResource("2_7ac6i")]
+offset_left = 197.0
+offset_top = 118.0
+offset_right = 504.0
+offset_bottom = 279.0
